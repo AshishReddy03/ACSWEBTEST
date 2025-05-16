@@ -4,8 +4,14 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  base: "/ACSWEBTEST/",
+  build: {
+    outDir: "dist",
+  },
   server: {
-    host: "0.0.0.0",
-    port:5173 // 👈 This allows external devices to connect
+    historyApiFallback: true,
+  },
+  preview: {
+    historyApiFallback: true,
   },
 });
